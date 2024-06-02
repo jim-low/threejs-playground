@@ -1,8 +1,6 @@
 # ThreeJS Playground
 This repository serves the purpose of exploring the intricacies of the Javascript 3D Library - "ThreeJS"
 
-## Agenda
-
 ## Setting Up ThreeJS
 ```
 const FOV = 75

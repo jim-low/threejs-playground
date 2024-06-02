@@ -12,12 +12,12 @@ document.body.appendChild(renderer.domElement)
 const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: "blue", wireframe: true })
 const cube = new THREE.Mesh(geometry, material)
+cube.position.z = -5;
 scene.add(cube)
 
-cube.position.z = -5;
 function animate() {
-  cube.rotation.z += 0.01;
-  cube.rotation.x += 0.005;
+  cube.rotation.z += 0.005;
+  cube.rotation.x += 0.001;
   renderer.render(scene, camera)
   requestAnimationFrame(animate)
 }

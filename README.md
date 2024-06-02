@@ -31,3 +31,29 @@ How it works:<br>
 3. Create a renderer that uses WebGL Rendering
 4. Set the size of the renderer to the current window dimensions
 5. append the renderer to the element that you wish to display on (in this case, the renderer is being placed into the entire document.body so that it shows up covering the entire window)
+
+## Rendering a Cube into the Scene
+```
+const geometry = new THREE.BoxGeometry(1, 1, 1)
+const material = new THREE.MeshBasicMaterial({ color: "blue" })
+const cube = new THREE.Mesh(geometry, material)
+cube.position.z = -5;
+scene.add(cube)
+renderer.render(scene, camera)
+```
+
+Explanation:<br>
+The code above renders a simple cube that is colored ```blue``` onto the screen.<br>
+<br>
+To create a "shape" in ThreeJS:<br>
+* "Shapes" require a ```Geometry``` and a ```Material```
+* The complete form of a "shape" is called a ```Mesh```
+* ```Geometry``` refers to how the object should be drawn (in this case, it is drawn with the dimensions of a cube. i.e. width, height, depth)
+* ```Material``` refers to the appearance of an object. You may use a texture mapping as well, but in this case we are giving it a simple solid color.
+
+How it works:<br>
+* Create both the ```Geometry``` and the ```Material``` as shown in the code sample above.
+* Create a cube ```Mesh``` reference and pass in both the ```geometry``` and ```material```
+* Position the cube 5 units backwards on the ```z-axis```
+* add the ```cube``` to the scene
+* Render the ```Scene``` and ```Camera``` where the ```Scene``` has the ```cube``` added to it
